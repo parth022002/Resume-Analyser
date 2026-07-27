@@ -32,6 +32,15 @@ class IntakeParsingAgent:
                 extracted_text = "\n".join(pages)
             except Exception:
                 extracted_text = ""
+
+        if not extracted_text.strip():
+            try:
+                decoded = pdf_bytes.decode("utf-8", errors="ignore")
+                cleaned = "".join(ch for ch in decoded if ch.isprintable() or ch in ['\n', '\r', '\t'])
+                if len(cleaned.strip()) > 5:
+                    extracted_text = cleaned
+            except Exception:
+                pass
                 
         return extracted_text
 

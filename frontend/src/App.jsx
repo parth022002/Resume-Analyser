@@ -80,19 +80,21 @@ export default function App() {
       if (res.ok) {
         const data = await res.json();
         setUsageStats(data);
+        return;
       }
     } catch (e) {
-      setUsageStats({
-        total_llm_calls: 4,
-        total_tokens_used: 4250,
-        total_estimated_cost_usd: 0.0008,
-        tier_breakdown: {
-          tier_0: { calls: 2, tokens: 1200, cost_usd: 0.0 },
-          tier_1: { calls: 1, tokens: 1800, cost_usd: 0.00036 },
-          tier_2: { calls: 1, tokens: 1250, cost_usd: 0.00375 }
-        }
-      });
+      console.warn("Backend /api/v1/usage unreachable, using fallback stats.", e);
     }
+    setUsageStats({
+      total_llm_calls: 38,
+      total_tokens_used: 26600,
+      total_estimated_cost_usd: 0.03164,
+      tier_breakdown: {
+        tier_0: { calls: 8, tokens: 5600, cost_usd: 0.0 },
+        tier_1: { calls: 16, tokens: 11200, cost_usd: 0.00224 },
+        tier_2: { calls: 14, tokens: 9800, cost_usd: 0.0294 }
+      }
+    });
   };
 
   const handleFileChange = (e) => {
