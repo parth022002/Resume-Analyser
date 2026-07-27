@@ -367,31 +367,6 @@ npm run dev
 ```
 Frontend UI: `http://localhost:3000`
 
----
-
-## 🔑 Environment Variables Setup (`.env`)
-
-Create `backend/.env` with your connection settings and API keys:
-
-```env
-ENVIRONMENT=production
-
-# Neon PostgreSQL Database Connection URL
-DATABASE_URL=postgresql://neondb_owner:npg_lrHvxfj6d5Ba@ep-bold-dream-aztdx0m2-pooler.c-3.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
-
-# Live API Keys
-GEMINI_API_KEY=AIzaSyCaPmnwMFXjCEoroH4BmsJ4gO39gbO78hE
-GROQ_API_KEY=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
-OPENROUTER_API_KEY=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
-
-# Multi-Model Router Defaults
-TIER_0_MODEL=openrouter/google/gemini-2.5-flash:free
-TIER_1_MODEL=openrouter/deepseek/deepseek-chat
-TIER_2_MODEL=openrouter/nvidia/nemotron-4-340b-instruct
-```
-
----
-
 ## 🧪 Automated Test Verification
 
 Run the full automated backend test runner to verify PII redaction, prompt injection scanning, Neon RAG retrieval, rate limiting, and 10-agent pipeline execution:
