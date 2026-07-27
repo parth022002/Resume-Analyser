@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TalentForge v2 — AI Multi-Agent Career Intelligence Platform
 
 <p align="center">
@@ -438,3 +439,4 @@ ALL 5 TEST SUITES PASSED! TALENTFORGE V2 IS 100% HEALTHY.
 
 ## 📜 License & Acknowledgements
 Built with ❤️ for the **TalentForge v2 AI Career Intelligence Platform**.
+=======
