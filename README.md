@@ -16,6 +16,47 @@
 
 ---
 
+## 🔄 Complete User Journey & System Execution Flow
+
+### 🚀 Step 1: Initial Open & Mandatory Student Authentication Gateway
+1. **First-Time Visitor Experience**: When opening TalentForge v3, the application checks `localStorage` for an active student session. If unauthenticated (`user === null`), the full-screen **Mandatory Login & Registration Gateway** is rendered with no close `X` button.
+2. **Account Registration**:
+   - Requires student's Full Name, Email, Password, Profile Avatar Photo, and **Compulsory Education Details** (University/Institute Name, Degree, Graduation Year, CGPA).
+   - Also supports a 1-click **⚡ Auto-Fill Demo Account** (`arjun.b@talentforge.ai`).
+3. **Resend Email Dispatch**: Upon registration/login, the system dispatches a welcome registration email containing student login credentials and dispatches security alert emails via Resend REST API (`onboarding@resend.dev` → `parthahuja9.pa@gmail.com`).
+
+### 💼 Step 2: Workspace Launch & Live Job Sourcing Engine
+1. **Personalized Workspace Launch**: Upon authentication, the candidate is transitioned to the main **TalentForge Dashboard** featuring the 3D metallic gold `logo.png` emblem and user greeting.
+2. **Live Job Sourcing Engine**: Aggregates tech job postings live across LinkedIn, Naukri.com, Simplify Jobs, Adzuna API, and Greenhouse/Lever/Ashby ATS feeds.
+3. **Universal Search & Dynamic Job Synthesis**: Searching for **ANY** company or role (e.g., *Apple, Tesla, Netflix, Oracle, Cybersecurity, DevOps, AI*) checks Neon PostgreSQL; if 0 local records exist, the search engine dynamically synthesizes active positions, calculates fit scores, and persists records directly to Neon PostgreSQL so search queries never return 0 results.
+
+### 🎯 Step 3: 7-Factor ATS Match Scoring & Job Detail Modal
+1. **7-Factor Weighted Matrix**: Evaluates student profile against job description (Technical Skills 35%, Experience 20%, Seniority 15%, Location 10%, Education 5%, Semantic Embeddings 10%, Contextual Fit 5%).
+2. **Split Drawer Inspection**: Clicking any job card opens the **Job Detail Drawer** with 4 tabs (*Overview*, *Match Breakdown*, *Company Insights*, *Strategy*) and a 1-click **"Generate Package 🪄"** button.
+
+### 🎯 Step 4: Per-User Target Companies Management
+1. **Database Isolation**: Every student account manages their own tracked target companies list saved directly in Neon PostgreSQL.
+2. **ATS Resolution**: Resolves public ATS board slugs (Greenhouse, Lever, Ashby, Workday).
+3. **Interactive Control**: Add new target companies or click the trash icon to remove target companies from the student's personal list.
+
+### 📄 Step 5: Combined Resume & ATS Templates Studio
+1. **Dynamic Section Builder**: Allows candidates to add/remove custom placement sections (Work Experience, Technical Projects, Education, Certifications, Leadership).
+2. **Overleaf Integration**:
+   - One-click **"Export to Overleaf ↗"** generates pre-loaded LaTeX projects in Overleaf Studio.
+   - **"Import Overleaf Code"** modal allows pasting raw `.tex` source code directly from Overleaf.
+3. **Multi-Format Export**: Direct **"Print / Save PDF"**, **"Download .tex"**, and shareable placement link copying.
+
+### 📋 Step 6: Application Package Generation & Kanban Pipeline
+1. **Package Generation**: Generates tailored ATS resumes, custom cover letters, and Q&A interview responses for each application.
+2. **Kanban Board**: Drag-and-drop management across 5 stages (`Shortlisted`, `Applied`, `Interviewing`, `Offer`, `Rejected`).
+
+### 🧭 Step 7: Student Action Plan & Up-Skilling Roadmap
+1. **Live Placement Readiness Gauge**: Live progress bar tracking candidate placement readiness (`% Placement Ready`).
+2. **Score Predictor**: Predicts fit score elevation (e.g., `92% → 98% Top Candidate Tier`).
+3. **6 Up-Skilling Domains**: Technical Skills, Resume Metrics, System Design, GitHub CI/CD, STAR Behavioral Mock Interviews, and High-Frequency LeetCode DSA Patterns.
+
+---
+
 ## 🌟 Key Product Features
 
 ### 💼 1. Universal Live Job Feed & Sourcing Engine
