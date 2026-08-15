@@ -16,6 +16,124 @@
 
 ---
 
+## 📊 System Architecture & Process Flowcharts
+
+### 1. Multi-Agent Orchestration Architecture (LangGraph Supervisor)
+
+```mermaid
+flowchart TD
+    User([Candidate User]) -->|Resume PDF + Search Preferences| Orch[Orchestrator Agent Supervisor]
+    
+    Orch --> C1
+    subgraph C1["Cluster 1 · Intake & Profile"]
+        A1[Intake & Profile Agent - PII Redaction]
+    end
+    
+    C1 --> C2
+    subgraph C2["Cluster 2 · Discovery & Intelligence"]
+        A2[Job Discovery Agent - Adzuna, LinkedIn, Naukri, ATS]
+        A3[Company & Job Research Agent]
+    end
+    
+    C2 --> C3
+    subgraph C3["Cluster 3 · Matching & Strategy"]
+        A4[Job Fit & ATS Agent — 7-Factor Score 1-100]
+        A5[Skill Gap & Career Trajectory Agent]
+        A6[Application Strategy Agent]
+    end
+    
+    C3 --> C4
+    subgraph C4["Cluster 4 · Content & Packaging"]
+        A7[CV & Content Agent — LaTeX & Overleaf]
+        A8[Code & Portfolio Agent — GitHub MCP]
+        A9[Application Package Agent]
+    end
+    
+    C4 -->|Human Review Checkpoint| Review([Candidate Approves & Submits Package])
+    
+    C4 --> C5
+    subgraph C5["Cluster 5 · Tracking & Weekly Engagement"]
+        A10[Tracker & Notification Agent — Kanban Board]
+    end
+    
+    C3 --> C6
+    subgraph C6["Cluster 6 · Quality, Prep & Reporting"]
+        A11[Interview Coach Agent — STAR Method]
+        A12[Quality & Explainability Agent — Groundedness]
+        A13[Report Generator Agent]
+    end
+    
+    A12 -->|Quality Gate Score below 0.75| C3
+    C6 --> FinalOutput([Career & Application Report])
+    A10 -->|Weekly Digest Cron| A2
+```
+
+---
+
+### 2. Student Authentication & Mandatory Onboarding Flow
+
+```mermaid
+flowchart LR
+    A[Student opens TalentForge v3] --> B{Saved User in localStorage?}
+    B -->|No| C[Mandatory Auth Gateway - AuthModal]
+    C --> D[Enter Full Name, Email, Password, Photo]
+    D --> E[Enter Compulsory Education - Univ, Degree, Year, CGPA]
+    E --> F[Trigger POST /api/v1/auth/signup in Neon DB]
+    F --> G[Dispatch Welcome Credentials Email via Resend API]
+    G --> H[Save user to localStorage & Launch Workspace]
+    B -->|Yes| H
+```
+
+---
+
+### 3. Agentic RAG Conversational Assistant Sequence Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Candidate as Student / Candidate
+    participant Chat as Conversational Assistant
+    participant RAG as Agentic RAG (pgvector Engine)
+    participant Fit as Job Fit & ATS Agent
+    participant DB as Neon PostgreSQL DB
+
+    Candidate->>Chat: "Compare my fit for Superset Inc. vs Razorpay SDE roles"
+    Chat->>RAG: Query candidate profile + both job postings
+    RAG-->>Chat: Returns JD_Superset, JD_Razorpay, CandidateKnowledgeGraph
+    Chat->>Fit: Score(profile, JD_Superset)
+    Fit-->>Chat: 92/100 + 7-Factor Breakdown Rationale
+    Chat->>Fit: Score(profile, JD_Razorpay)
+    Fit-->>Chat: 85/100 + 7-Factor Breakdown Rationale
+    Chat-->>Candidate: Formatted side-by-side fit comparison & up-skilling recommendations
+```
+
+---
+
+### 4. Weekly Digest & Automated Job Sourcing Sequence Flow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Cron as GitHub Actions / Vercel Cron
+    participant Orch as Orchestrator Supervisor
+    participant Disc as Job Discovery Agent
+    participant Fit as Job Fit & ATS Agent
+    participant Track as Tracker & Notification Agent
+    participant Mail as Resend Email Service
+    participant Student as Student User
+
+    Cron->>Orch: Trigger scheduled weekly execution
+    Orch->>Disc: Poll Adzuna, Simplify Jobs, & Target ATS endpoints (Greenhouse/Lever/Ashby)
+    Disc-->>Orch: Discovered new postings (deduplicated against Neon DB)
+    Orch->>Fit: Compute 7-factor fit scores for new postings
+    Fit-->>Orch: Ranked jobs list with score breakdowns
+    Orch->>Track: Filter top matches (>80% fit) & log to target_companies
+    Track->>Mail: Dispatch weekly digest email via Resend REST API
+    Mail-->>Student: Deliver weekly top matches digest email
+```
+
+---
+
 ## 🔄 Complete User Journey & System Execution Flow
 
 ### 🚀 Step 1: Initial Open & Mandatory Student Authentication Gateway
