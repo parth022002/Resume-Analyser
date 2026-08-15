@@ -1,11 +1,15 @@
 {
-  "name": "talentforge-v2",
-  "version": "2.0.0",
+  "name": "talentforge-v3-react-app",
+  "version": "3.0.0",
   "private": true,
-  "description": "TalentForge v2 — Multi-Agent Candidate Fit & Career Strategy Platform",
+  "description": "TalentForge v3 — Full React 19 AI Job Discovery & Application Intelligence Platform",
+  "main": "frontend/src/main.jsx",
   "scripts": {
-    "dev:backend": "cd backend && .\\venv\\Scripts\\python.exe -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload",
-    "dev:frontend": "cd frontend && npm run dev",
-    "test:backend": "cd backend && .\\venv\\Scripts\\python.exe tests/run_tests.py"
+    "start": "cd frontend && npm run dev",
+    "dev": "cd frontend && npm run dev",
+    "dev:react": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && python main.py",
+    "build": "cd frontend && npm run build",
+    "build:react": "cd frontend && npm run build"
   }
 }

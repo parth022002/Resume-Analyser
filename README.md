@@ -1,442 +1,192 @@
-<<<<<<< HEAD
-# TalentForge v2 — AI Multi-Agent Career Intelligence Platform
-
 <p align="center">
-  <img src="frontend/public/logo.png" alt="TalentForge Emblem" width="220"/>
+  <img src="./logo.png" alt="TalentForge Logo" width="220" />
 </p>
 
-<p align="center">
-  <strong>A 10-Agent Multi-Stage AI Career Intelligence Platform powered by LangGraph, Neon PostgreSQL + pgvector, LiteLLM 3-Tier Multi-Model Router, Model Context Protocol (MCP), and Ragas Quality Gates.</strong>
-</p>
+# ⚡ TALENTFORGE AI CAREER INTELLIGENCE PLATFORM
 
-<p align="center">
-  <img src="https://img.shields.io/badge/LangGraph-Multi--Agent%20Pipeline-blueviolet?style=for-the-badge&logo=python" alt="LangGraph"/>
-  <img src="https://img.shields.io/badge/Neon-PostgreSQL%20%2B%20pgvector-00e599?style=for-the-badge&logo=postgresql" alt="Neon Database"/>
-  <img src="https://img.shields.io/badge/LiteLLM-3--Tier%20Model%20Router-ff69b4?style=for-the-badge" alt="LiteLLM Router"/>
-  <img src="https://img.shields.io/badge/OpenRouter-Multi--LLM%20Ecosystem-6f42c1?style=for-the-badge" alt="OpenRouter"/>
-  <img src="https://img.shields.io/badge/Vite%20%2B%20React-Tailwind%20Dashboard-61dafb?style=for-the-badge&logo=react" alt="React UI"/>
-  <img src="https://img.shields.io/badge/Vercel-Production%20Deployment-black?style=for-the-badge&logo=vercel" alt="Vercel Ready"/>
-</p>
+[![React 19](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.109+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Neon PostgreSQL](https://img.shields.io/badge/Database-Neon_PostgreSQL-00E599?logo=postgresql&logoColor=white)](https://neon.tech/)
+[![Python 3.12+](https://img.shields.io/badge/Python-3.12%20%7C%203.13-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.4+-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Resend Email](https://img.shields.io/badge/Email-Resend_API-000000?logo=resend&logoColor=white)](https://resend.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
----
-
-## 📌 Table of Contents
-
-- [🌟 Overview](#-overview)
-- [🤖 OpenRouter & Multi-LLM Model Matrix](#-openrouter--multi-llm-model-matrix)
-- [🧩 Deep-Dive Breakdown of All 10 AI Agents](#-deep-dive-breakdown-of-all-10-ai-agents)
-- [📊 System Architecture & Flowcharts](#-system-architecture--flowcharts)
-  - [1. LangGraph 4-Stage Multi-Agent Orchestration Flowchart](#1-langgraph-4-stage-multi-agent-orchestration-flowchart)
-  - [2. Multi-LLM 3-Tier Router Policy Flowchart](#2-multi-llm-3-tier-router-policy-flowchart)
-  - [3. GitHub MCP Code Review Sequence Diagram](#3-github-mcp-code-review-sequence-diagram)
-  - [4. Quality Gate & Ragas Evaluation Loop](#4-quality-gate--ragas-evaluation-loop)
-- [✨ Key Platform Features](#-key-platform-features)
-- [📁 Project Folder Structure](#-project-folder-structure)
-- [⚡ Quick Start & Local Installation](#-quick-start--local-installation)
-- [🔑 Environment Variables Setup (`.env`)](#-environment-variables-setup-env)
-- [🧪 Automated Test Verification](#-automated-test-verification)
-- [🚀 GitHub Push & Vercel Deployment Guide](#-github-push--vercel-deployment-guide)
+**TalentForge v3** is an enterprise-grade, student-first **Active Job Discovery, Resume Optimization, and Application Intelligence Engine**. Featuring an ultra-luxurious metallic gold, royal violet, and electric cyan design system centered around the official 3D `logo.png` emblem, TalentForge aggregates live postings across LinkedIn, Naukri.com, Greenhouse, Lever, Ashby, and Simplify Jobs ATS platforms, evaluates 7-factor ATS match scores, generates tailored Overleaf LaTeX resumes, and provides personalized candidate action plans.
 
 ---
 
-## 🌟 Overview
+## 🌟 Key Product Features
 
-Standard ATS resume checkers rely on basic keyword frequency without evaluating single-column screener rules, external GitHub code quality, or long-term career growth. **TalentForge v2** transforms resume checks into actionable career strategy using a **10-Agent LangGraph Pipeline**.
+### 💼 1. Universal Live Job Feed & Sourcing Engine
+- **Multi-Platform Aggregation**: Sources verified tech job listings live across LinkedIn, Naukri.com, Adzuna, Simplify Jobs, Greenhouse, Lever, and Ashby ATS boards.
+- **Universal Search & Live Synthesis**: Searching for **ANY** company or role (e.g. *Apple, Tesla, Netflix, Oracle, Cybersecurity, DevOps, AI*) dynamically synthesizes active positions, calculates fit scores, and persists records directly to Neon PostgreSQL so search queries never return 0 results.
+- **7-Factor ATS Fit Matrix**: Evaluates candidates against job descriptions across 7 weighted dimensions:
+  1. *Technical Skills Match* (35 pts)
+  2. *Years of Experience* (20 pts)
+  3. *Role Seniority Level* (15 pts)
+  4. *Location & Work Mode* (10 pts)
+  5. *Mandatory Education* (5 pts)
+  6. *Semantic Embedding Relevance* (10 pts)
+  7. *Contextual Industry Fit* (5 pts)
+- **Interactive Match Score Rings**: Custom animated SVG rings displaying score color coding (`Exceptional Match`, `Great Match`, `Moderate Match`).
 
-It evaluates candidate ATS readability, inspects public repositories via **Model Context Protocol (MCP)**, generates **3 tailored resume variants**, constructs a **30/90/180-day milestone roadmap**, and provides an **interactive interview readiness coach**.
+### 🎓 2. Compulsory Student Profile & Registration
+- **Compulsory Validation**: Registration requires student's Full Name and Education details (University/Institute Name, Degree, Specialization).
+- **Profile Photo Upload**: Custom avatar photo upload support with 1-click **⚡ Auto-Fill Demo** button (`arjun.b@talentforge.ai`).
+- **Resend Email Notifications**: Automatically dispatches a welcome registration email containing student login credentials (username & password) and sends security alerts upon login.
 
----
+### 📄 3. Combined Resume & ATS Templates Studio
+- **Dynamic Section Builder**: Allows candidates to add/remove custom sections (Work Experience, Technical Projects, Education, Certifications, Leadership & Publications).
+- **Overleaf Import & Export**: One-click **"Export to Overleaf ↗"** button pre-loads full LaTeX projects directly into Overleaf Studio. Includes an **"Import Overleaf Code"** modal for pasting custom `.tex` templates.
+- **Multi-Format Downloads**: Direct **"Print / Save PDF"**, **"Download .tex"**, and shareable placement link copying.
+- **Curated LaTeX Template Gallery**: Industry-standard templates (*Jake's Resume (FAANG Standard)*, *FAANGPath Minimalist*, *Deedy OpenFont*, *Awesome CV*, *Executive Clean Tech*).
 
-## 🤖 OpenRouter & Multi-LLM Model Matrix
+### 🎯 4. Per-User Target Companies Monitoring
+- **Isolated DB Persistence**: Every student account maintains their own tracked target companies list saved directly in Neon PostgreSQL.
+- **ATS Resolution**: Resolves board endpoints for Greenhouse, Lever, Ashby, and Workday.
+- **Interactive Management**: Add or remove target companies with instant trash-can delete actions and live polling badges.
 
-TalentForge v2 uses a 3-Tier Multi-LLM Router routing calls dynamically across specialized models:
+### 📋 5. Applications Tracker (Kanban Board)
+- **Drag-and-Drop Pipeline**: Columns for `Shortlisted`, `Applied`, `Interviewing`, `Offer`, and `Rejected`.
+- **Package Generator**: Generates tailored ATS resumes, custom cover letters, and Q&A interview responses for each application.
 
-| Task / Stage | Primary OpenRouter / Provider Model | Specialized Agent Responsibilities |
-|---|---|---|
-| **Intake & Quality Gate** | `google/gemini-2.5-flash:free` | Fast PDF parsing, text extraction, PII security redaction, and Ragas groundedness evaluation. |
-| **Match & Skill Matrix** | `google/gemma-2-27b-it` | High-precision entity extraction, keyword gap identification, and ATS layout scoring. |
-| **GitHub MCP Code Review** | `deepseek/deepseek-chat` / `deepseek-r1` | Reasoning engine for public repository architecture, documentation score, and test coverage grading. |
-| **Resume & Safety Synthesis** | `nvidia/nemotron-4-340b-instruct` | Content safety verification & 3-variant executive resume rewriting (**ATS**, **Tech**, **Executive**). |
-| **Interview Coach & Roadmaps** | `groq/llama-3.3-70b-versatile` | High-throughput technical Q&A hints, STAR behavioral guidance, and 30/90/180-day career roadmaps. |
-
----
-
-## 🧩 Deep-Dive Breakdown of All 10 AI Agents
-
-```
- ┌──────────────────────────────────────────────────────────────────────────────┐
- │                      STAGE 1: INTAKE & PARSING LAYER                         │
- ├──────────────────────────────────────────────────────────────────────────────┤
- │ Agent 1: Intake & Parsing Agent                                              │
- ├──────────────────────────────────────────────────────────────────────────────┤
- │                      STAGE 2: TECHNICAL ANALYSIS LAYER                       │
- ├──────────────────────────────────────────────────────────────────────────────┤
- │ Agent 2: Match & ATS Compatibility Agent                                     │
- │ Agent 3: Code & Portfolio Agent (GitHub MCP)                                 │
- │ Agent 4: Skill & Requirement Insight Agent                                   │
- ├──────────────────────────────────────────────────────────────────────────────┤
- │                    STAGE 3: STRATEGIC CAREER GUIDANCE LAYER                  │
- ├──────────────────────────────────────────────────────────────────────────────┤
- │ Agent 5: Optimizer Agent (Resume Variants)                                   │
- │ Agent 6: Career Trajectory Agent (30/90/180 Roadmap)                         │
- │ Agent 7: Interview Coach Agent                                               │
- ├──────────────────────────────────────────────────────────────────────────────┤
- │                     STAGE 4: QUALITY GATE & DELIVERY LAYER                   │
- ├──────────────────────────────────────────────────────────────────────────────┤
- │ Agent 8: Explainability Agent                                                │
- │ Agent 9: Quality Gate Agent (Ragas Evaluation & Retry Loop)                  │
- │ Agent 10: Report Generator Agent                                             │
- └──────────────────────────────────────────────────────────────────────────────┘
-```
-
-### Stage 1: Intake & Parsing Layer
-
-#### 1. Intake & Parsing Agent
-* **Core Function**: Collects candidate PDF resumes and target Job Specifications (text or uploaded PDF/TXT). Extracts text, redacts sensitive PII (emails/phone numbers) for security, and builds structured candidate & job entity graphs.
-* **Inputs**: PDF Resume, Job Description (Text/File), Optional GitHub/Portfolio URLs.
-* **Outputs**: `CandidateKnowledgeGraph` & `JobKnowledgeGraph` JSON entities.
-* **Model Tier**: Tier 0 (*Gemini 2.5 Flash*).
+### 🧭 6. Student Action Plan & Placement Roadmap
+- **Live Progress Engine**: Real-time progress bar tracking candidate placement readiness (`% Placement Ready`).
+- **Score Predictor**: Predicts fit score elevation (e.g., `92% → 98% Top Candidate Tier`).
+- **6 Up-Skilling Domains**: Technical Skills, Resume Metrics, System Design, GitHub CI/CD, Mock Interview Prep (STAR Method), and High-Frequency LeetCode DSA Patterns.
 
 ---
 
-### Stage 2: Technical Analysis Layer
+## 🎨 Design System & Branding
 
-#### 2. Match & ATS Compatibility Agent
-* **Core Function**: Analyzes semantic similarity and keyword density between Candidate and Job entity graphs. Evaluates single-column ATS formatting compliance and calculates ATS Readability Score (0-100%).
-* **Inputs**: `CandidateKnowledgeGraph` & `JobKnowledgeGraph`.
-* **Outputs**: ATS Readability Score, Semantic Similarity Score, Missing Keyword List.
-* **Model Tier**: Tier 1 (*Google Gemma 2 27B / DeepSeek V3*).
-
-#### 3. Code & Portfolio Agent (GitHub MCP Gateway)
-* **Core Function**: Interacts with the **GitHub Model Context Protocol (MCP)** gateway to inspect public repositories, commit hygiene, code modularity, documentation hygiene, and unit test coverage signals.
-* **Inputs**: Candidate GitHub Profile URL.
-* **Outputs**: Code Quality Grade (`A+`), Documentation Score, Unit Test Verification, MCP Code Findings.
-* **Model Tier**: Tier 1 (*DeepSeek V3 / DeepSeek R1*).
-
-#### 4. Skill & Requirement Insight Agent
-* **Core Function**: Identifies critical missing technical skills. For every missing skill, explains its real-world engineering application, interview expectations, and current market demand trends.
-* **Inputs**: Extracted Candidate Skills vs Target Job Requirements.
-* **Outputs**: Priority Skill Gaps, Real-World Engineering Context, Interview Expectation Notes.
-* **Model Tier**: Tier 1 (*DeepSeek V3 / Google Gemma 2*).
+- **Emblem**: Official 3D metallic gold `TF` monogram (`logo.png`) featuring electric cyan circuit nodes & royal violet growth arc.
+- **Color Tokens**:
+  - **Metallic Gold**: `#FEF08A` $\rightarrow$ `#F59E0B` $\rightarrow$ `#D97706`
+  - **Royal Violet**: `#7C3AED` $\rightarrow$ `#6366F1` $\rightarrow$ `#A855F7`
+  - **Electric Cyan**: `#06B6D4` $\rightarrow$ `#22D3EE` $\rightarrow$ `#38BDF8`
+  - **Dark Sapphire Canvas**: `#030712` $\rightarrow$ `#0B0F19` $\rightarrow$ `#0F172A`
 
 ---
 
-### Stage 3: Strategic Career Guidance Layer
+## 🛠️ Technology Stack
 
-#### 5. Optimizer Agent (Resume Variants Generator)
-* **Core Function**: Synthesizes 3 tailored resume variants for different hiring decision-makers:
-  1. **ATS-Optimized**: Maximum keyword density for automated screener software.
-  2. **Technical Deep-Dive**: In-depth architecture, API design, and concurrency details for engineering leads.
-  3. **Executive & Leadership**: ROI, team leadership, and strategic execution metrics for directors/C-Suite.
-* **Inputs**: Candidate Resume Graph, Target Job Spec, Verified Skill Matrix.
-* **Outputs**: 3 Tailored Resume Variants with targeted bullet points.
-* **Model Tier**: Tier 2 (*NVIDIA Nemotron 4 340B / Claude 3.5 Sonnet*).
+### ⚛️ Frontend Architecture (React 19)
+- **Framework**: **React 19** + **Vite 5.4+** (Fast HMR, ES Modules).
+- **Styling & Design System**: Dark Navy Theme (`#0B0F19`), Vanilla CSS tokens, Tailwind CSS 3.4, Glassmorphism (`backdrop-blur-xl`).
+- **Icons**: `lucide-react`.
 
-#### 6. Career Trajectory Agent
-* **Core Function**: Analyzes industry hiring trends and constructs an actionable, phased **30-Day, 90-Day, and 180-Day Progression Roadmap**.
-* **Inputs**: Skill Gaps, Target Job Role & Industry Domain.
-* **Outputs**: 30-Day (Gap Closure), 90-Day (Advanced Systems), 180-Day (Role Placement) Milestones.
-* **Model Tier**: Tier 1 (*Groq Llama 3.3 70B*).
+### ⚡ Backend Architecture (Python 3.12+ / FastAPI)
+- **Framework**: Python 3.12+ / 3.13 + **FastAPI 0.109+** + **Uvicorn** + **SQLAlchemy Async**.
+- **Multi-LLM Router**: LiteLLM fallback chains across zero-cost free APIs (**Groq**, **Google Gemini AI Studio**, **OpenRouter**, **GitHub Models**, **HuggingFace**).
+- **Email Service**: Resend REST API connected via custom HTTP client with fallback mechanisms.
 
-#### 7. Interview Coach Agent
-* **Core Function**: Generates technical Q&A with answer hints, behavioral questions formatted using the STAR framework, company-specific preparation tips, coding challenge prompts, and calculates an **Interview Readiness Score**.
-* **Inputs**: Target Role, Job Description, Skill Matrix.
-* **Outputs**: Technical Q&A, Behavioral STAR Hints, Coding Challenges, Interview Readiness Score (0-100%).
-* **Model Tier**: Tier 1 (*Groq Llama 3.3 70B*).
-
----
-
-### Stage 4: Quality Gate & Delivery Layer
-
-#### 8. Explainability Agent
-* **Core Function**: Attaches explicit reasoning metadata (`Problem -> Evidence -> Reason -> Expected Improvement -> Confidence Score`) to every insight and score produced across the pipeline.
-* **Inputs**: Analysis Scores & Skill Matrix.
-* **Outputs**: Explainability Metadata & Confidence Calibration Cards.
-* **Model Tier**: Tier 2 (*NVIDIA Nemotron 4 340B*).
-
-#### 9. Quality Gate Agent (Ragas Evaluation & Retry Loop)
-* **Core Function**: Performs automated proxy evaluation (scoring groundedness, context relevance, and answer completeness). If the quality score is below `0.75`, triggers an automated LangGraph loop-back edge to re-run Stage 2 analysis.
-* **Inputs**: Full Synthesized Report Object.
-* **Outputs**: Quality Score (0–1.0), Pass/Retry Edge Decision.
-* **Model Tier**: Tier 0 (*Gemini 2.5 Flash*).
-
-#### 10. Report Generator Agent
-* **Core Function**: Compiles validated outputs from all 9 previous agents into the final unified JSON Career Intelligence Report and HTML printable export format.
-* **Inputs**: LangGraph StateGraph Final Dictionary.
-* **Outputs**: Final JSON Report & HTML Printable Export Document.
-* **Model Tier**: Tier 2 (*NVIDIA Nemotron 4 340B*).
+### 🗄️ Database & Persistence
+- **Database Engine**: **Neon PostgreSQL** (`postgresql+asyncpg://`) with SSL connections.
+- **Schema Architecture**: 8 relational tables:
+  1. `users`: Student user credentials, email, full name, avatar URL, plan.
+  2. `candidate_profiles`: Headline, skills, compulsory education details, certifications, extracurriculars, URLs, resume score.
+  3. `job_postings`: Sourced tech job listings, skills, salaries, platform URLs.
+  4. `fit_scores`: 7-factor ATS match breakdown scores.
+  5. `applications`: Kanban application status, tailored cover letters, Q&A responses.
+  6. `target_companies`: Per-student tracked company list and board slugs.
+  7. `resume_templates`: Curated LaTeX resume templates.
+  8. `evaluation_runs`: System quality and precision metrics.
 
 ---
 
-## 📊 System Architecture & Flowcharts
-
-### 1. LangGraph 4-Stage Multi-Agent Orchestration Flowchart
-
-```mermaid
-flowchart TD
-    User([Candidate / Recruiter]) -->|Upload PDF Resume + Job Spec| Stage1[Stage 1: Intake & Parsing Agent]
-    Stage1 -->|Candidate & Job Entity Graphs| Stage2
-    
-    subgraph Stage2 [Stage 2: Technical Analysis Layer]
-        MatchATS[Match & ATS Agent]
-        CodeMCP[Code & Portfolio Agent - GitHub MCP]
-        SkillInsight[Skill & Requirement Insight Agent]
-    end
-    
-    Stage2 --> Stage3
-    
-    subgraph Stage3 [Stage 3: Strategic Career Guidance Layer]
-        Optimizer[Optimizer Agent - 3 Resume Variants]
-        Trajectory[Career Trajectory Agent - 30/90/180 Roadmap]
-        InterviewCoach[Interview Coach & Readiness Score]
-    end
-    
-    Stage3 --> Stage4
-    
-    subgraph Stage4 [Stage 4: Quality Gate & Delivery Layer]
-        Explainability[Explainability Agent]
-        QualityGate{Quality Gate Agent - Ragas Score >= 0.75?}
-        ReportGen[Report Generator Agent]
-    end
-    
-    QualityGate -->|Quality Score < 0.75| RetryLoop[Trigger LangGraph Retry Loop #1]
-    RetryLoop --> MatchATS
-    
-    QualityGate -->|Quality Score >= 0.75| ReportGen
-    ReportGen --> FinalOutput([Validated Career Intelligence Report & HTML Export])
-```
-
----
-
-### 2. Multi-LLM 3-Tier Router Policy Flowchart
-
-```mermaid
-flowchart LR
-    AgentTask[Agent LLM Request] --> Router{LiteLLM Model Router}
-    
-    Router -->|Stage 1 Intake & Stage 4 Quality Check| Tier0[Tier 0: Fast / Free]
-    Tier0 --> Gemini[Google Gemini 2.5 Flash]
-    
-    Router -->|Stage 2 Match & Code Review| Tier1[Tier 1: High Efficiency]
-    Tier1 --> DeepSeek[DeepSeek V3 / Google Gemma 2]
-    
-    Router -->|Stage 3 Resume & Career Synthesis| Tier2[Tier 2: Premium Guarded]
-    Tier2 --> Nemotron[NVIDIA Nemotron 4 340B]
-    
-    Gemini --> Monitor[Token & Cost Observability Logger]
-    DeepSeek --> Monitor
-    Nemotron --> Monitor
-```
-
----
-
-### 3. GitHub MCP Code Review Sequence Diagram
-
-```mermaid
-sequenceDiagram
-    autonumber
-    participant App as App Workspace
-    participant Agent as Code Agent (Agent 3)
-    participant MCP as GitHub MCP Gateway
-    participant GitHub as GitHub API
-    
-    App->>Agent: Candidate GitHub Profile URL
-    Agent->>MCP: Request Repository Quality Signals
-    MCP->>GitHub: Fetch Repositories, Readme & Commits
-    GitHub-->>MCP: Raw Repos & Public Commit Signals
-    MCP->>Agent: Compute Modularity, Docs Score & Unit Test Presence
-    Agent-->>App: Return Code Quality Grade (A+) & MCP Findings
-```
-
----
-
-### 4. Quality Gate & Ragas Evaluation Loop
-
-```mermaid
-stateDiagram-v2
-    [*] --> Stage1_Intake
-    Stage1_Intake --> Stage2_Analysis
-    Stage2_Analysis --> Stage3_Guidance
-    Stage3_Guidance --> Quality_Gate_Check
-    
-    state Quality_Gate_Check {
-        [*] --> Evaluate_Ragas
-        Evaluate_Ragas --> Score_Check
-        Score_Check --> Passed : Quality Score >= 0.75
-        Score_Check --> Failed : Quality Score < 0.75
-    }
-    
-    Failed --> Stage2_Analysis : Re-run Analysis Pipeline
-    Passed --> Stage4_Report_Generator
-    Stage4_Report_Generator --> [*]
-```
-
----
-
-## ✨ Key Platform Features
-
-1. **Compulsory Steps 1 & 2 Form Validation**:
-   - **Step 1 (Resume PDF)** and **Step 2 (Target Job Description)** are strictly required with clear `* COMPULSORY` indicators.
-2. **Dual Mode Job Description Input**:
-   - Toggle seamlessly between **Paste Text** (textarea) and **Upload File** (PDF / TXT / DOCX).
-3. **Optional Step 3 with Hover Info Popovers**:
-   - Step 3 (GitHub & Portfolio) is optional. Interactive hover `HelpCircle` popovers explain what the Code Agent inspects.
-4. **Dark 🌙 & Light ☀️ Mode Theme Engine**:
-   - Toggle between dark glassmorphism and crisp, high-contrast light mode with automatic `localStorage` persistence.
-5. **Interactive 5-Tab Report View**:
-   - 📊 **Career Overview** (Match scores, verified skills matrix, missing skill tags, action items)
-   - 🗺️ **30/90/180-Day Roadmap** (Milestone cards)
-   - 🎤 **Interview Coach** (Technical Q&A, STAR behavioral hints, coding challenges)
-   - 📄 **Resume Variants** (ATS-Optimized, Technical Deep-Dive, Executive Leadership)
-   - 🐙 **Code Review** (GitHub MCP repository findings)
-
----
-
-## 📁 Project Folder Structure
+## 📁 Clean Project Directory Structure
 
 ```
 TalentForge/
 ├── backend/
 │   ├── app/
-│   │   ├── api/v1/             # FastAPI routers (analyze, reports, usage)
-│   │   ├── core/               # Settings, Guardrails, LiteLLM Router, Observability
-│   │   ├── db/                 # Neon PostgreSQL DB models & sessions
-│   │   ├── mcp/                # Model Context Protocol GitHub client gateway
-│   │   ├── rag/                # Hybrid RAG retriever & curated benchmark corpus
-│   │   └── agents/             # 10 LangGraph Agents (Stage 1 through Stage 4)
-│   ├── tests/                  # Automated test suite (run_tests.py)
-│   ├── .env                    # Environment variables (Live API keys)
-│   ├── .env.example            # Environment template
-│   ├── requirements.txt        # Python backend dependencies
-│   └── main.py                 # FastAPI application entrypoint
+│   │   ├── agents/          # Multi-agent intelligence & chat RAG
+│   │   ├── api/v1/          # REST API endpoints (auth, jobs, companies)
+│   │   ├── core/            # Config, email service, LLM router & guardrails
+│   │   ├── db/              # SQLAlchemy async models & Neon DB database.py
+│   │   └── mcp/             # ATS connectors (Greenhouse, Lever, Ashby)
+│   ├── main.py              # FastAPI server entry point
+│   ├── requirements.txt     # Python dependencies
+│   └── .env                 # Production backend environment configuration
 │
-├── frontend/                   # React + Vite + Tailwind CSS Dashboard
-│   ├── public/                 # Favicon & 3D Logo emblem asset
-│   ├── src/                    # App.jsx, index.css, main.jsx
-│   ├── index.html
-│   ├── vite.config.js          # Vite config with silent proxy error handler
-│   └── package.json
+├── frontend/
+│   ├── public/              # Static assets & official logo.png
+│   ├── src/
+│   │   ├── assets/          # Project images & logo.png
+│   │   ├── components/      # React components (Sidebar, Header, AuthModal)
+│   │   ├── pages/           # View pages (Dashboard, JobFeed, ResumeBuilder)
+│   │   ├── App.jsx          # React 19 main layout router
+│   │   ├── main.jsx         # React application entry point
+│   │   └── index.css        # Gold, violet & cyan design tokens
+│   ├── package.json         # Frontend dependencies & scripts
+│   └── vite.config.js       # Vite 5.4 build configuration
 │
-├── .gitignore                  # Production gitignore rules
-├── vercel.json                 # Vercel static & serverless routing rules
-├── checklist.md                # Task tracking checklist
-└── README.md                   # Complete documentation
+├── .env                     # Production environment credentials
+├── .gitignore               # Git exclusion rules
+├── logo.png                 # Official 3D emblem
+├── package.json             # Root workspace scripts
+├── README.md                # Consolidated master documentation
+└── vercel.json              # Deployment configuration
 ```
 
 ---
 
-## ⚡ Quick Start & Local Installation
+## 📡 REST API Reference Guide
 
-### 1. Prerequisites
-* Python 3.9+
-* Node.js 18+
+All API endpoints are prefixed with `/api/v1`.
 
-### 2. Backend Setup & Run
+### 🔐 Auth & Student Profile (`/api/v1/auth`)
+- `POST /api/v1/auth/signup`: Create a new student account with compulsory education details and dispatch welcome credentials email.
+- `POST /api/v1/auth/login`: Authenticate student credentials and dispatch login security alert email.
+- `GET /api/v1/auth/user/{user_id}`: Fetch complete candidate profile directly from Neon PostgreSQL.
+- `POST /api/v1/auth/update_profile`: Persist student profile edits, skills, and education details to Neon PostgreSQL.
 
-```powershell
-# Navigate to backend directory
+### 💼 Jobs & Sourcing (`/api/v1/jobs`)
+- `GET /api/v1/jobs/`: List all discovered job postings with weighted fit scores.
+- `GET /api/v1/jobs/search?q={query}`: Search jobs by role/company; dynamically synthesizes and persists live matching positions if 0 DB records exist.
+- `GET /api/v1/jobs/{job_id}`: Fetch detailed posting info and fit rationale.
+
+### 🎯 Target Companies (`/api/v1/target-companies`)
+- `GET /api/v1/target-companies/?user_id={id}`: List target companies owned by the specific student user.
+- `POST /api/v1/target-companies/`: Add a new target company to the student's database list.
+- `DELETE /api/v1/target-companies/{id}?user_id={id}`: Remove a target company from the database.
+
+### 📋 Applications Tracker (`/api/v1/applications`)
+- `GET /api/v1/applications/`: List application records for the Kanban board.
+- `POST /api/v1/applications/package/{job_id}`: Generate tailored resume, cover letter, and Q&A responses.
+- `PATCH /api/v1/applications/{app_id}/status`: Update Kanban status (`Shortlisted`, `Applied`, `Interviewing`, `Offer`, `Rejected`).
+
+---
+
+## 💻 Quick Start & Local Execution Guide
+
+### Prerequisites
+- **Node.js**: v18+ / v20+ LTS
+- **Python**: v3.12 or v3.13
+
+### 1. Run Python Backend (FastAPI)
+```bash
 cd backend
-
-# Create & activate Python virtual environment
 python -m venv venv
-
-# Windows (PowerShell):
-.\venv\Scripts\Activate.ps1
-# Mac / Linux:
-# source venv/bin/activate
-
-# Upgrade pip and install dependencies
-python -m pip install --upgrade pip
+# Windows: venv\Scripts\activate | macOS/Linux: source venv/bin/activate
 pip install -r requirements.txt
-
-# Launch FastAPI Backend Server
-uvicorn main:app --reload --port 8000
+python main.py
 ```
-API Documentation: `http://localhost:8000/docs`
+- **API Base URL**: `http://localhost:8000/api/v1`
+- **Swagger Interactive Docs**: `http://localhost:8000/docs`
 
-### 3. Frontend Setup & Run
-
-```powershell
-# Navigate to frontend directory
+### 2. Run React 19 Frontend
+```bash
+# In a new terminal window
 cd frontend
-
-# Install Node dependencies
 npm install
-
-# Launch Vite Frontend Dashboard
 npm run dev
 ```
-Frontend UI: `http://localhost:3000`
-
-## 🧪 Automated Test Verification
-
-Run the full automated backend test runner to verify PII redaction, prompt injection scanning, Neon RAG retrieval, rate limiting, and 10-agent pipeline execution:
-
-```powershell
-backend\venv\Scripts\python backend/tests/run_tests.py
-```
-
-Expected Output:
-```text
-============================================================
-TALENTFORGE V2 PLATFORM -- COMPREHENSIVE TEST SUITE
-============================================================
-
-[1/5] Testing PII Redaction Guardrail...
-  [SUCCESS] PII Redaction Filter passed cleanly.
-
-[2/5] Testing Prompt Injection Detector...
-  [SUCCESS] Prompt Injection Scanner passed cleanly.
-
-[3/5] Testing Neon Hybrid RAG Retrieval Engine...
-  [SUCCESS] RAG Retriever passed (Retrieved 'Single-Column Standard Layout', Score: 2.733).
-
-[4/5] Testing Per-Session Rate Limiter...
-  [SUCCESS] Rate Limiter enforcement passed.
-
-[5/5] Testing 10-Agent Multi-Stage Orchestrated Pipeline...
-  [SUCCESS] 10-Agent Pipeline Executed Successfully!
-    - Report ID: rpt_8827f238
-    - Match Score: 55.0%
-    - ATS Score: 88.0%
-    - Quality Gate Score: 93%
-    - GitHub MCP Quality Grade: A
-
-============================================================
-ALL 5 TEST SUITES PASSED! TALENTFORGE V2 IS 100% HEALTHY.
-============================================================
-```
+- **React Portal URL**: `http://localhost:5173`
 
 ---
 
-## 🚀 GitHub Push & Vercel Deployment Guide
+## 📜 License & Disclosures
 
-### Step 1: Push Project to GitHub
-
-1. Initialize Git in the root directory:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: complete TalentForge v2 AI Career Intelligence Platform"
-   ```
-
-2. Link to your GitHub repository and push:
-   ```bash
-   git remote add origin https://github.com/YOUR_USERNAME/TalentForge.git
-   git branch -M main
-   git push -u origin main
-   ```
-
-### Step 2: Deploy to Vercel
-
-1. Log in to [Vercel](https://vercel.com).
-2. Import your `TalentForge` GitHub repository.
-3. Vercel reads `vercel.json` and automatically deploys the **React Frontend** and **FastAPI Serverless Backend**.
-4. Add Environment Variable `DATABASE_URL` in Vercel settings.
-5. Click **Deploy**. Your platform is live!
-
----
-
-## 📜 License & Acknowledgements
-Built with ❤️ for the **TalentForge v2 AI Career Intelligence Platform**.
-=======
+Distributed under the **MIT License**. Free open-access platform built for university students and job candidates worldwide.
