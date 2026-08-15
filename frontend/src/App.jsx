@@ -22,24 +22,13 @@ export default function App() {
   const [toast, setToast] = useState(null);
   
   // Student Auth State
-  const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem('talentforge_student_user');
-    return saved ? JSON.parse(saved) : {
-      id: 1,
-      full_name: "Arjun B.",
-      email: "arjun.b@talentforge.ai",
-      avatar_url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150",
-      plan: "Free Student Account",
-      headline: "Software Engineer - Backend & Systems",
-      skills: ["Python", "FastAPI", "AWS", "PostgreSQL", "Docker", "Microservices"],
-      experience_years: 3.5,
-      preferred_roles: ["Software Engineer", "Backend Developer", "SDE II"],
-      preferred_locations: ["Bengaluru", "Remote", "Hybrid"],
-      education_details: [
-        { degree: "B.Tech Computer Science", institute: "RV College of Engineering", year: "2024", cgpa: "8.8 / 10" }
-      ]
-    };
+    return saved ? JSON.parse(saved) : null;
+  });
+  const [isAuthOpen, setIsAuthOpen] = useState(() => {
+    const saved = localStorage.getItem('talentforge_student_user');
+    return !saved;
   });
 
   useEffect(() => {
@@ -143,10 +132,13 @@ export default function App() {
         {/* Toast Notification Container */}
         <Toast toast={toast} onClose={() => setToast(null)} />
 
-        {/* Student Auth & Onboarding Modal */}
+        {/* Student Auth & Onboarding Gateway */}
         <AuthModal
-          isOpen={isAuthOpen}
-          onClose={() => setIsAuthOpen(false)}
+          isOpen={isAuthOpen || !user}
+          isMandatory={!user}
+          onClose={() => {
+            if (user) setIsAuthOpen(false);
+          }}
           onLoginSuccess={(loggedInUser) => {
             handleUpdateUser(loggedInUser);
             setIsAuthOpen(false);

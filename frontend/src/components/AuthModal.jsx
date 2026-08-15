@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Upload, CheckCircle2, User, Mail, Lock, Sparkles, FileText, Camera, GraduationCap, ArrowRight, ShieldCheck, KeyRound, Eye, EyeOff } from 'lucide-react';
 
-export default function AuthModal({ isOpen, onClose, onLoginSuccess, showToast }) {
+export default function AuthModal({ isOpen, onClose, onLoginSuccess, showToast, isMandatory = false }) {
   const [tab, setTab] = useState('login'); // 'login' | 'signup'
   
   // Login State
@@ -173,13 +173,15 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess, showToast }
     <div className="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-xl flex items-center justify-center p-4 overflow-y-auto animate-in fade-in duration-200">
       <div className="bg-white dark:bg-[#0F172A] border border-slate-200 dark:border-slate-800 w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden relative transition-all">
         
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all z-20"
-        >
-          <X className="w-5 h-5" />
-        </button>
+        {/* Close Button (Hidden if login/registration is mandatory) */}
+        {!isMandatory && (
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all z-20"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        )}
 
         {/* Modal Header & Hero Banner */}
         <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/80 p-6 text-center border-b border-slate-800/80 space-y-2">
